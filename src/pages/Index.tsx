@@ -5,6 +5,7 @@ import HowItWorks from '../components/HowItWorks';
 import Footer from '../components/Footer';
 import EmotionDetector from '../components/EmotionDetector';
 import AnimatedBackground from '../components/AnimatedBackground';
+import FeedbackBox from '../components/FeedbackBox';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <AnimatedBackground />
       <Hero />
       <EmotionDetector />
+      <FeedbackBox />
       <Features />
       <HowItWorks />
       <Footer />

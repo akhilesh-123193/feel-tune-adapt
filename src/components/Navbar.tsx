@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
@@ -29,7 +28,7 @@ const Navbar = () => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <motion.div 
+        <motion.div
           className="flex items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -56,13 +55,43 @@ const Navbar = () => {
         </nav>
         
         <motion.div
+          className="flex items-center space-x-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <button className="px-6 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium transition-all hover:bg-primary/90 hover:shadow-md">
+          {/* Sign In Button */}
+          <motion.button
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              scrolled 
+                ? 'text-primary border border-primary hover:bg-primary/10' 
+                : 'text-white border border-white/30 hover:bg-white/10'
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => console.log('Sign In clicked')}
+          >
+            Sign In
+          </motion.button>
+          
+          {/* Sign Up Button */}
+          <motion.button
+            className="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-blue-600 text-white text-sm font-medium transition-all hover:shadow-lg hover:shadow-primary/20"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => console.log('Sign Up clicked')}
+          >
+            Sign Up
+          </motion.button>
+          
+          {/* Get Started Button */}
+          <motion.button 
+            className="px-6 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium transition-all hover:bg-primary/90 hover:shadow-md"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Get Started
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </motion.header>
