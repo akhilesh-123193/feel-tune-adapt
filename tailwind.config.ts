@@ -1,3 +1,4 @@
+
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -56,6 +57,18 @@ const config: Config = {
           calm: '#06D6A0',   // Teal/mint
           sadness: '#118AB2', // Blue
           anger: '#EF476F',  // Red/pink
+        },
+        gold: {
+          DEFAULT: '#D4AF37',
+          light: '#F5D76E',
+          dark: '#936C00',
+          muted: 'rgba(212, 175, 55, 0.8)'
+        },
+        black: {
+          DEFAULT: '#000000',
+          light: '#222222',
+          dark: '#111111',
+          muted: 'rgba(0, 0, 0, 0.7)'
         }
       },
       borderRadius: {

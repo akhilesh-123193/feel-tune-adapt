@@ -86,11 +86,11 @@ const Features = () => {
   };
   
   return (
-    <section id="features" className="py-24 px-6">
+    <section id="features" className="py-24 px-6 bg-black">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <motion.span 
-            className="px-4 py-1.5 rounded-full text-xs bg-blue-50 text-primary font-semibold mb-4 inline-block"
+            className="px-4 py-1.5 rounded-full text-xs bg-black-light text-gold font-semibold mb-4 inline-block border border-gold/30"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -100,7 +100,7 @@ const Features = () => {
           </motion.span>
           
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-3xl md:text-4xl font-bold mb-6 text-gold"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -110,7 +110,7 @@ const Features = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-gold-muted max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -131,13 +131,13 @@ const Features = () => {
             <motion.div 
               key={index}
               variants={itemVariants}
-              className="glass-card rounded-2xl p-8 transition-all duration-300 hover:shadow-xl"
+              className="glass-card rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:border-gold/40"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-5">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-gold">{feature.title}</h3>
+              <p className="text-gold-muted">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

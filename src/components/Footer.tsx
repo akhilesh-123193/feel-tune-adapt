@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-100 py-12 px-6">
+    <footer className="bg-black border-t border-gold/20 py-12 px-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <motion.div
@@ -13,15 +13,15 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <a href="#" className="text-2xl font-semibold bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent inline-block mb-5">
+            <a href="#" className="text-2xl font-semibold text-gold-gradient inline-block mb-5">
               EmotionTunes
             </a>
-            <p className="text-muted-foreground mb-6 max-w-xs">
+            <p className="text-gold-muted mb-6 max-w-xs">
               Revolutionary AI-powered music player that adapts to your emotional state in real-time.
             </p>
             <div className="flex space-x-4">
               {['facebook', 'twitter', 'instagram', 'youtube'].map((social) => (
-                <a key={social} href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                <a key={social} href="#" className="w-10 h-10 rounded-full bg-black-light flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors border border-gold/30">
                   <span className="sr-only">{social}</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     {social === 'facebook' && (
@@ -69,11 +69,11 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * colIndex }}
             >
-              <h3 className="font-semibold mb-5">{column.title}</h3>
+              <h3 className="font-semibold mb-5 text-gold">{column.title}</h3>
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="#" className="text-gold-muted hover:text-gold transition-colors">
                       {link}
                     </a>
                   </li>
@@ -83,9 +83,9 @@ const Footer = () => {
           ))}
         </div>
         
-        <div className="mt-14 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-14 pt-8 border-t border-gold/20 flex flex-col md:flex-row justify-between items-center">
           <motion.p 
-            className="text-sm text-muted-foreground mb-4 md:mb-0"
+            className="text-sm text-gold-muted mb-4 md:mb-0"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -95,15 +95,15 @@ const Footer = () => {
           </motion.p>
           
           <motion.div 
-            className="flex space-x-6 text-sm text-muted-foreground"
+            className="flex space-x-6 text-sm text-gold-muted"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary transition-colors">Cookies</a>
+            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-gold transition-colors">Cookies</a>
           </motion.div>
         </div>
       </div>

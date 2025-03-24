@@ -22,7 +22,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-black">
       <AnimatedBackground />
       
       <div className="container px-6 py-10 mx-auto flex flex-col lg:flex-row items-center">
@@ -33,7 +33,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.span 
-            className="px-4 py-1.5 rounded-full text-xs bg-blue-50 text-primary font-semibold mb-6"
+            className="px-4 py-1.5 rounded-full text-xs bg-black-light text-gold font-semibold mb-6 border border-gold/30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -42,17 +42,17 @@ const Hero = () => {
           </motion.span>
           
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             Music that adapts to your 
-            <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"> emotions</span>
+            <span className="text-gold-gradient"> emotions</span>
           </motion.h1>
           
           <motion.p 
-            className="text-lg text-muted-foreground mb-8 max-w-lg"
+            className="text-lg text-gold-muted mb-8 max-w-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -66,10 +66,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            <button className="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-all hover:shadow-lg">
+            <button className="px-8 py-3 rounded-full bg-gold text-black font-medium hover:bg-gold-dark transition-all hover:shadow-lg">
               Try Now
             </button>
-            <button className="px-8 py-3 rounded-full border border-gray-300 hover:bg-gray-50 transition-all">
+            <button className="px-8 py-3 rounded-full border border-gold/50 text-gold hover:bg-black-light transition-all">
               Learn More
             </button>
           </motion.div>
@@ -83,12 +83,12 @@ const Hero = () => {
         >
           <div className="relative">
             {/* Circular music player mockup */}
-            <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full glass-card flex items-center justify-center relative overflow-hidden shadow-2xl">
+            <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full glass-card flex items-center justify-center relative overflow-hidden shadow-2xl border border-gold/30">
               {/* Album artwork */}
-              <div className="w-60 h-60 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-emotion-joy via-emotion-calm to-emotion-sadness rotate-cover">
-                <div className="w-full h-full rounded-full flex items-center justify-center bg-black/10 backdrop-blur-sm">
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-md">
-                    <div className="w-6 h-6 rounded-full bg-primary"></div>
+              <div className="w-60 h-60 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-gold-light via-gold to-gold-dark rotate-cover">
+                <div className="w-full h-full rounded-full flex items-center justify-center bg-black/50 backdrop-blur-sm">
+                  <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center shadow-md border border-gold/50">
+                    <div className="w-6 h-6 rounded-full bg-gold"></div>
                   </div>
                 </div>
               </div>
@@ -96,14 +96,14 @@ const Hero = () => {
               {/* Audio visualization */}
               <div ref={audioRef} className="absolute bottom-4 left-0 right-0 flex items-end justify-center h-10 px-8">
                 {[...Array(10)].map((_, i) => (
-                  <div key={i} className="wave-bars h-4"></div>
+                  <div key={i} className="wave-bars h-4 w-2 mx-0.5 rounded-sm bg-gold-light"></div>
                 ))}
               </div>
             </div>
             
             {/* Floating emotion bubbles */}
             <motion.div 
-              className="emotion-bubble w-14 h-14 absolute -top-4 -right-2 bg-emotion-joy"
+              className="emotion-bubble w-14 h-14 absolute -top-4 -right-2 bg-gold/80"
               animate={{ 
                 y: [-10, 0, -10],
                 scale: [1, 1.05, 1],
@@ -114,7 +114,7 @@ const Hero = () => {
             </motion.div>
             
             <motion.div 
-              className="emotion-bubble w-12 h-12 absolute top-20 -left-6 bg-emotion-calm"
+              className="emotion-bubble w-12 h-12 absolute top-20 -left-6 bg-gold-dark/80"
               animate={{ 
                 y: [-8, 5, -8],
                 scale: [1, 1.08, 1],
@@ -125,7 +125,7 @@ const Hero = () => {
             </motion.div>
             
             <motion.div 
-              className="emotion-bubble w-10 h-10 absolute bottom-20 -left-4 bg-emotion-sadness"
+              className="emotion-bubble w-10 h-10 absolute bottom-20 -left-4 bg-gold-light/80"
               animate={{ 
                 y: [5, -5, 5],
                 scale: [1, 1.06, 1],
@@ -136,7 +136,7 @@ const Hero = () => {
             </motion.div>
             
             <motion.div 
-              className="emotion-bubble w-11 h-11 absolute bottom-10 -right-2 bg-emotion-anger"
+              className="emotion-bubble w-11 h-11 absolute bottom-10 -right-2 bg-gold-muted"
               animate={{ 
                 y: [0, -10, 0],
                 scale: [1, 1.04, 1],
@@ -157,12 +157,12 @@ const Hero = () => {
         transition={{ delay: 1.5, duration: 1 }}
       >
         <motion.div 
-          className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-gold/50 rounded-full flex justify-center"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
           <motion.div 
-            className="w-1 h-2 bg-gray-300 rounded-full mt-2"
+            className="w-1 h-2 bg-gold rounded-full mt-2"
             animate={{ 
               height: [8, 16, 8],
               y: [0, 10, 0]

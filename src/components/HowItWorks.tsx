@@ -31,11 +31,11 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white">
+    <section id="how-it-works" className="py-24 px-6 bg-gradient-to-b from-black-light to-black">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <motion.span 
-            className="px-4 py-1.5 rounded-full text-xs bg-blue-50 text-primary font-semibold mb-4 inline-block"
+            className="px-4 py-1.5 rounded-full text-xs bg-black-light text-gold font-semibold mb-4 inline-block border border-gold/30"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -45,7 +45,7 @@ const HowItWorks = () => {
           </motion.span>
           
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-3xl md:text-4xl font-bold mb-6 text-gold"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -55,7 +55,7 @@ const HowItWorks = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-gold-muted max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -67,7 +67,7 @@ const HowItWorks = () => {
         
         <div className="relative max-w-5xl mx-auto">
           {/* Connecting line */}
-          <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 md:-ml-0.5 w-1 bg-gray-100 z-0"></div>
+          <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 md:-ml-0.5 w-1 bg-gold/20 z-0"></div>
           
           {/* Steps */}
           <div className="relative z-10 space-y-12">
@@ -81,14 +81,14 @@ const HowItWorks = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
                 <div className={`relative flex-shrink-0 ${index % 2 === 0 ? 'md:order-1' : 'md:order-1'}`}>
-                  <div className={`w-14 h-14 rounded-full ${step.color} shadow-lg flex items-center justify-center text-white font-bold z-10`}>
+                  <div className="w-14 h-14 rounded-full bg-gold/80 shadow-lg flex items-center justify-center text-black font-bold z-10">
                     {step.number}
                   </div>
                 </div>
                 
                 <div className={`glass-card rounded-2xl p-6 md:p-8 md:w-[calc(50%-3rem)] ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-gold">{step.title}</h3>
+                  <p className="text-gold-muted">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -102,7 +102,7 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <button className="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-all hover:shadow-lg">
+          <button className="px-8 py-3 rounded-full bg-gold text-black font-medium hover:bg-gold-light transition-all hover:shadow-lg">
             Get Started Now
           </button>
         </motion.div>
